@@ -12,7 +12,10 @@ type ChatArr = {
 
 export default function Screen() {
 
+
     const name_list = ['ABC', 'PQR', 'XYZ', '123'];
+
+    const username = "ABC";
 
     const Chats:ChatArr[] = [
         {ABC : "Hello, How are you?"},
@@ -92,14 +95,24 @@ export default function Screen() {
                             <div key={index} className="flex flex-grow flex-col w-full flex-wrap px-4 py-1">
                                 {Object.entries(name).map(([key, value]) => (
                                     <div key={key}>
-                                        {key === "ABC" ? (
-                                            <div className="flex justify-start">
-                                                <p className="w-fit max-w-3xl border border-blue-200 rounded-md px-4  bg-gradient-to-b from-gray-400 to-gray-200 shadow-lg my-1">{value.toString()}</p>
+                                        {key === username ? (
+                                            <div className="flex justify-end">
+                                                <p className="w-fit max-w-3xl border border-blue-200 rounded-md px-4  bg-gradient-to-b from-gray-400 to-gray-200 shadow-lg my-1">
+                                                    <div className="text-xs pt-1 font-bold text-blue-800">
+                                                        You
+                                                    </div>
+                                                    {value.toString()}
+                                                </p>
                                             </div>
                                             
                                         ):(
-                                            <div className="flex justify-end">
-                                                <p className="w-fit max-w-3xl border border-blue-200 rounded-md px-4  bg-gradient-to-b from-gray-400 to-gray-200 shadow-lg my-1">{value.toString()}</p>
+                                            <div className="flex justify-start">
+                                                <p className="w-fit max-w-3xl border border-blue-200 rounded-md px-4  bg-gradient-to-b from-gray-400 to-gray-200 shadow-lg my-1">
+                                                    <div className="text-xs pt-1 font-bold text-blue-800">
+                                                        {key}
+                                                    </div>
+                                                    {value.toString()}
+                                                </p>
                                             </div>
                                             
                                         )}
