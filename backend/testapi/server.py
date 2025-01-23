@@ -9,9 +9,6 @@ connected_clients = set()
 # Function to handle each client connection
 async def handler(websocket):
 
-    # name = await websocket.recv()
-    # connected_clients[websocket] = name
-
     print("Websocket : server started")
 
     # websocket contains (name/connection) of the client 
